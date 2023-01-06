@@ -116,4 +116,14 @@ public class MovieRepository {
         //clearing the pair.
         directorMovieMapping = new HashMap<>();
     }
+    public String getDirectorNameByMovieName(String movieName){
+        for(String d: directorMovieMapping.keySet()){
+            List<String> m = directorMovieMapping.get(d);
+            for(String s: m){
+                if(s.equals(movieName)) return d;
+            }
+        }
+        return null;
+    }
+
 }
